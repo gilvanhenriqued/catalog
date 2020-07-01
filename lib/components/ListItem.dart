@@ -7,6 +7,7 @@ class ListItem extends StatelessWidget {
     return ListTile(
       title: Text('Arroz'),
       trailing: Icon(Icons.add_shopping_cart),
+      onTap: () {},
     );
   }
 }
