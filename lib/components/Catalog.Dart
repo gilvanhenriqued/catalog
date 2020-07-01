@@ -45,7 +45,7 @@ class _CatalogState extends State<Catalog> {
           builder: (context, cartCtrl, widget) {
             return Center(
               child: Text(
-                "${cartCtrl.selectedItems.length}",
+                "R\$${cartCtrl.total}",
                 style: TextStyle(
                   fontSize: 20
                 ),

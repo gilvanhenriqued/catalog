@@ -29,6 +29,9 @@ class CartCtrl extends ChangeNotifier {
     selectedItems.forEach((i) {
       total += i.price;  
     });
+
+    String t = total.toStringAsFixed(3);
+    total = double.parse(t);
     notifyListeners();
   }
 
