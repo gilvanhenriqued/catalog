@@ -27,10 +27,11 @@ class _CatalogState extends State<Catalog> {
 
     return ListTile(
       title: Text("${item.name} por R\$${item.price}"),
-      trailing: Icon(Icons.add_shopping_cart),
+      trailing: cartCtrl.selectedItems.contains(item) ? 
+        Icon(Icons.verified_user, color: Colors.green)
+        : Icon(Icons.add_shopping_cart),
       onTap: () {
-        // cartCtrl.add(item);
-        // add to cart and change the icon
+        cartCtrl.add(item);
       },
     );
   }
