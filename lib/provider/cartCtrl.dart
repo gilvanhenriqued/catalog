@@ -2,7 +2,7 @@ import 'package:catalog/models/item.dart';
 import 'package:flutter/widgets.dart';
 
 class CartCtrl extends ChangeNotifier {
-  final List<Item> _items = [
+  final List<Item> items = [
     Item(name: "Camisa vasual", price: 59.90),
     Item(name: "Caução de veludo", price: 39.90),
     Item(name: "Chapéu de vaqueiro", price: 49.90),
