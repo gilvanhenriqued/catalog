@@ -23,12 +23,13 @@ class _CatalogState extends State<Catalog> {
   }
 
   _buildItems(Item item) {
-    // CartCtrl cartCtrl = Provider.of<CartCtrl>(context);
-    
+    CartCtrl cartCtrl = Provider.of<CartCtrl>(context);
+
     return ListTile(
       title: Text("${item.name} por R\$${item.price}"),
       trailing: Icon(Icons.add_shopping_cart),
       onTap: () {
+        // cartCtrl.add(item);
         // add to cart and change the icon
       },
     );
@@ -39,6 +40,18 @@ class _CatalogState extends State<Catalog> {
     return Scaffold(
       appBar: AppBar(
         title: Text('Catalog'),
+        leading: Consumer<CartCtrl>(
+          builder: (context, cartCtrl, widget) {
+            return Center(
+              child: Text(
+                "${cartCtrl.selectedItems.length}",
+                style: TextStyle(
+                  fontSize: 20
+                ),
+              )
+            ); 
+          }  
+        ),
       ),
       body: Consumer<CartCtrl>(
         builder: (context, cartCtrl, widget) {

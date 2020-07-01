@@ -11,22 +11,22 @@ class CartCtrl extends ChangeNotifier {
     Item(name: "Bolsa de escola", price: 109.90),
   ];
 
-  final List<Item> _selectedItems = [];
+  final List<Item> selectedItems = [];
 
   double total = 0;
 
   void add(Item item) {
-    _selectedItems.add(item);
+    selectedItems.add(item);
     calculateTotal();
   }
 
   void remove(Item item) {
-    _selectedItems.remove(item);
+    selectedItems.remove(item);
     calculateTotal();
   }
 
   calculateTotal() {
-    _selectedItems.forEach((i) {
+    selectedItems.forEach((i) {
       total += i.price;  
     });
     notifyListeners();
